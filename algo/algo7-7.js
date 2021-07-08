@@ -51,7 +51,6 @@ function insertionSort(nums) {
       nums[checkIndex + 1] = nums[checkIndex];
       checkIndex--;
     }
- 
   }
   return nums;
 }
