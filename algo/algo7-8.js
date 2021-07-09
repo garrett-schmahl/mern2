@@ -61,8 +61,7 @@ function merge(left, right) {
   }
   if (lc < left.length) {
     sortArray = sortArray.concat(left.slice(lc));
-  }
-  if (rc < right.length) {
+  } else if (rc < right.length) {
     sortArray = sortArray.concat(right.slice(rc));
   }
   return sortArray;
