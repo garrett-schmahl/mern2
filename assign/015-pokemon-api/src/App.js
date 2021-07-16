@@ -7,17 +7,16 @@ function App() {
   const [pokeShow, setPokeShow] = useState(null);
 
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
-      .then((response) => response.json())
-      .then((response) => setPokemon(response.results))
-      .then(console.log("refreshed"))
+    axios
+      .get("https://pokeapi.co/api/v2/pokemon?offset=0&limit=20")
+      .then((response) => setPokemon(response.data.results))
       .catch((err) => console.log(err));
   }, []);
   return (
     <div className="App">
       <button onClick={() => setPokeShow(true)}>Pokemon</button>
       <div>
-        {pokeShow == true &&
+        {pokeShow === true &&
           pokemon.map((pokemon, index) => {
             return <div key={index}>{pokemon.name}</div>;
           })}
