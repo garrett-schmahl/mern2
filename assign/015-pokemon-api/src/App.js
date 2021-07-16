@@ -12,9 +12,9 @@ function App() {
         console.log(err);
       }, []);
   });
-
   return (
     <div className="App">
+      <button>Fetch Pokemon</button>
       {pokemon.length > 0 &&
         pokemon.map((pokemon, index) => {
           return <div key={index}>{pokemon.name}</div>;
